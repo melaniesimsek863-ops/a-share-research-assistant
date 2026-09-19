@@ -1,0 +1,30 @@
+[project]
+name = "a-share-ai-trading-assistant"
+version = "0.6.6"
+description = "Local A-share short/mid-term trading research assistant"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.24",
+  "pandas>=2.0",
+  "openpyxl>=3.1",
+  "pydantic>=2.0",
+  "PyYAML>=6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0",
+  "ruff>=0.5",
+]
+
+real-data = [
+  "akshare>=1.18.81",
+]
+
+[project.scripts]
+a-share-ai = "a_share_ai.cli:main"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = ["-p", "no:cacheprovider"]

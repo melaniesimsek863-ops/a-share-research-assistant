@@ -1,0 +1,48 @@
+universe:
+  include_boards: ["main", "chinext"]
+  exclude_star_market: true
+  exclude_st: true
+  exclude_delisting_risk: true
+  min_listing_days: 120
+  min_avg_turnover_20d: 100000000
+  exclude_suspended: true
+
+strategy:
+  medium_term_weight: 0.6
+  timing_weight: 0.3
+  risk_weight: 0.1
+  focused_count: 5
+  candidate_count: 20
+  lookback_days: 120
+
+risk:
+  single_position_cap: 0.15
+  max_focused_holdings: 6
+  max_daily_new_buys: 3
+  hard_stop_loss_min: -0.10
+  hard_stop_loss_max: -0.07
+  trailing_profit_start_min: 0.12
+  trailing_profit_start_max: 0.20
+  portfolio_warning_drawdown: -0.12
+  portfolio_reduce_risk_drawdown: -0.15
+  allow_auto_order: false
+  allow_margin: false
+
+reports:
+  output_markdown: true
+  output_excel: true
+  output_dir: "outputs"
+
+backtest:
+  initial_cash: 1000000
+  commission_rate: 0.0003
+  slippage_rate: 0.001
+  rebalance_frequency: "daily"
+
+provider:
+  name: demo
+  stale_days: 5
+  adjustment: qfq
+  cache:
+    enabled: false
+    base_dir: data/raw/akshare

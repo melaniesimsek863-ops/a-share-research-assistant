@@ -1,0 +1,1 @@
+"""Structured AI explanation layer."""

@@ -1,0 +1,14 @@
+.worktrees/
+.superpowers/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+*.pyc
+.venv/
+outputs/
+data/raw/
+data/processed/
+.env
+.env.*
+!.env.example
+*.log
